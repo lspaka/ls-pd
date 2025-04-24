@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kvadrāta kontrole</title>
+</head>
+<body>
+    <h1>Mana HTML lapa ar JavaScript zīmēšanu</h1>
+    <p>Šī lapa demonstrē kvadrāta vadību ar tastatūru, izmantojot bultiņas un krāsu maiņu.</p>
+<canvas id="canvas" width="400" height="400"></canvas>
+<script>
+   const canvas = document.getElementById("canvas");
+   const ctx = canvas.getContext("2d");
+   let x = 50, y = 50, size = 50;
+   let color = "green";
+   function draw() {
+     ctx.clearRect(0, 0, canvas.width, canvas.height);
+     ctx.fillStyle = color;
+     ctx.fillRect(x, y, size, size);
+   }
+   document.addEventListener("keydown", e => {
+     if (e.key === "ArrowUp") y -= 10;
+     if (e.key === "ArrowDown") y += 10;
+     if (e.key === "ArrowLeft") x -= 10;
+     if (e.key === "ArrowRight") x += 10;
+     if (e.key === "g" || e.key === "G") color = "green";
+     if (e.key === "b" || e.key === "B") color = "black";
+     if (e.key === "o" || e.key === "O") color = "orange";
+     draw();
+   });
+   draw();
+</script>
+</body>
+</html>
+ 
+ 
+ 
+ 
